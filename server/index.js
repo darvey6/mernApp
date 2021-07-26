@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
     //     res.sendFile(path.join(__dirname, '../build', 'index.html'));
     // });
 
+//1
 app.use('/api', cardRouter)
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
