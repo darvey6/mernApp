@@ -7,7 +7,7 @@ function App() {
     const initialState = [];
 
     const fetchData = () => {
-        fetch('http://localhost:5000/api/cards', {
+        fetch('http://localhost:8080/api/cards', {
             method: 'GET'
         })
             .then(response => response.json())
@@ -37,7 +37,7 @@ function App() {
     };
 
     const handleDeleteClick = (e) => {
-        fetch(`http://localhost:5000/api/card/${e.target.value}`, {
+        fetch(`http://localhost:8080/api/card/${e.target.value}`, {
             method: "DELETE",
         }).then(() =>{
             console.log("deleted listings");
@@ -83,7 +83,7 @@ function App() {
                 listing._id === currentListing._id ? newListing : listing
             )
         );
-        fetch(`http://localhost:5000/api/card/${newListing.id}`, {
+        fetch(`http://localhost:8080/api/card/${newListing.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ function App() {
 
     const addListing = (newListing) => {
         setListings([newListing, ...listings]);
-        fetch('http://localhost:5000/api/card', {
+        fetch('http://localhost:8080/api/card', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

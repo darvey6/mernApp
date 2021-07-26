@@ -7,7 +7,7 @@ const db = require('./db')
 const cardRouter = require('./routes/card-router')
 
 const app = express()
-const apiPort = process.env.PORT || 5000;
+const apiPort = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
