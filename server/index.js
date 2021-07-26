@@ -5,6 +5,7 @@ const cors = require('cors')
 
 const db = require('./db')
 const cardRouter = require('./routes/card-router')
+const path = require('path');
 
 const app = express()
 const apiPort = process.env.PORT || 8080;
@@ -16,7 +17,7 @@ app.use(bodyParser.json())
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.sendFile(path.join(__dirname, '../build', 'index.html'));
 })
 
 if (process.env.NODE_ENV === 'production'){
